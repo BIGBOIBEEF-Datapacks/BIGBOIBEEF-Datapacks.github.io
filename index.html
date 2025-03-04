@@ -2,37 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Google Snake Game</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Crafting Recipes for Core SMP</title>
+  <style>
+    /* Global Styles & Background Animation */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(45deg, #f52b59, #f71246, #f51212);
+      background-size: 600% 600%;
+      animation: gradientAnimation 15s ease infinite;
+      line-height: 1.6;
+    }
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Header & Navigation */
+    header {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s;
+    }
+    nav a:hover {
+      border-bottom: 2px solid #fff;
+    }
+    
+    /* Section Headings */
+    section {
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+    
+    /* Enchantments Section */
+    .enchantments-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .enchant-column {
+      flex: 1;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Background colors for each enchantment column */
+    .soul-speed {
+      background-color: #49372d;
+    }
+    .swift-sneak {
+      background-color: #31979f;
+    }
+    .wind-burst {
+      background-color: #7980C2;
+    }
+    .enchant-column img {
+      width: 80%;
+      border: 2px solid #fff;
+      padding: 5px;
+    }
+    
+    /* Items Section */
+    .items-container {
+      background-color: #0fca83;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .items-grid img {
+      width: 100%;
+      border: 2px solid #fff;
+      padding: 5px;
+    }
+    
+    /* Seasonary Crafts Section */
+    .seasonary-container {
+      background-color: #5c5c5c;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .seasonary-container img {
+      width: 50%;
+      border: 2px solid #fff;
+      padding: 5px;
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
-  <!-- The game will be drawn on this canvas -->
-  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <!-- Main Title & Navigation -->
+  <header>
+    <h1>Custom Crafting Recipes for Core SMP</h1>
+    <nav>
+      <ul>
+        <li><a href="#enchantments">Enchantments</a></li>
+        <li><a href="#items">Items</a></li>
+        <li><a href="#seasonary-crafts">Seasonary Crafts</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Include the JavaScript file -->
-  <script src="script.js"></script>
+  <!-- Enchantments Section -->
+  <section id="enchantments">
+    <h2>Enchantments</h2>
+    <div class="enchantments-container">
+      <!-- Soul Speed Column -->
+      <div class="enchant-column soul-speed">
+        <h3>Soul Speed</h3>
+        <img src="soulspeed3.png" alt="Soul Speed 3">
+        <img src="soulspeed2.png" alt="Soul Speed 2">
+        <img src="soulspeed1.png" alt="Soul Speed 1">
+      </div>
+      <!-- Swift Sneak Column (top: image 3, middle: image 2, bottom: image 1) -->
+      <div class="enchant-column swift-sneak">
+        <h3>Swift Sneak</h3>
+        <img src="swiftsneak3.png" alt="Swift Sneak 3">
+        <img src="swiftsneak2.png" alt="Swift Sneak 2">
+        <img src="swiftsneak1.png" alt="Swift Sneak 1">
+      </div>
+      <!-- Wind Burst Column (top: image 3, middle: image 2, bottom: image 1) -->
+      <div class="enchant-column wind-burst">
+        <h3>Wind Burst</h3>
+        <img src="windburst3.png" alt="Wind Burst 3">
+        <img src="windburst2.png" alt="Wind Burst 2">
+        <img src="windburst1.png" alt="Wind Burst 1">
+      </div>
+    </div>
+  </section>
 
-  <!-- Image download links for your convenience -->
-  <div class="image-links">
-    <h3>Download Game Images</h3>
-    <ul>
-      <li>
-        <a href="https://via.placeholder.com/20/00FF00?text=Head" download="snake-head.png" target="_blank">
-          Download snake-head.png
-        </a>
-      </li>
-      <li>
-        <a href="https://via.placeholder.com/20/008000?text=Body" download="snake-body.png" target="_blank">
-          Download snake-body.png
-        </a>
-      </li>
-      <li>
-        <a href="https://via.placeholder.com/20/FF0000?text=Apple" download="apple.png" target="_blank">
-          Download apple.png
-        </a>
-      </li>
-    </ul>
-    <p><em>Save these images in an <strong>images</strong> folder next to your HTML file.</em></p>
-  </div>
+  <!-- Items Section -->
+  <section id="items">
+    <h2>Items</h2>
+    <div class="items-container">
+      <div class="items-grid">
+        <img src="item1.png" alt="Item 1">
+        <img src="item2.png" alt="Item 2">
+        <img src="item3.png" alt="Item 3">
+        <img src="item4.png" alt="Item 4">
+        <img src="item5.png" alt="Item 5">
+        <img src="item6.png" alt="Item 6">
+        <img src="item7.png" alt="Item 7">
+        <img src="item8.png" alt="Item 8">
+        <img src="item9.png" alt="Item 9">
+        <img src="item10.png" alt="Item 10">
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonary Crafts Section -->
+  <section id="seasonary-crafts">
+    <h2>Seasonary Crafts</h2>
+    <div class="seasonary-container">
+      <h3>Smelting Pickaxe</h3>
+      <img src="smelt_enchant.png" alt="Smelt Enchant">
+      <img src="smelt_pickaxe.png" alt="Smelt Pickaxe">
+    </div>
+  </section>
 </body>
 </html>
