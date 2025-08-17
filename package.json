@@ -1,0 +1,25 @@
+{
+  "name": "crafts",
+  "version": "1.0.0",
+  "description": "custom crafts",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BIGBOIBEEF-Datapacks/BIGBOIBEEF-Datapacks.github.io.git"
+  },
+  "keywords": [
+    "craft"
+  ],
+  "author": "BIGBOIBEEF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BIGBOIBEEF-Datapacks/BIGBOIBEEF-Datapacks.github.io/issues"
+  },
+  "homepage": "https://github.com/BIGBOIBEEF-Datapacks/BIGBOIBEEF-Datapacks.github.io#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
